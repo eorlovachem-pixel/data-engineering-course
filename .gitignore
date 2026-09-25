@@ -1,0 +1,6 @@
+# Dataset is stored externally
+urban_environment_monitoring.csv
+
+__pycache__/
+*.pyc
+.venv/
