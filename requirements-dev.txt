@@ -1,0 +1,2 @@
+# For local reviewer verification, notebooks, test suite and CLI
+-e .[dev,notebook]
