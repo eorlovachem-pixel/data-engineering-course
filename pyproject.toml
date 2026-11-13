@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leo-data-pipeline"
+version = "1.0.0"
+description = "Reproducible end-to-end ETL and EDA for simulated LEO ground-station contacts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "ITMO Data Engineering Course Project"}]
+dependencies = [
+    "numpy>=1.24,<3",
+    "pandas>=2.0,<4",
+    "matplotlib>=3.7,<4",
+    "seaborn>=0.12,<1",
+    "plotly>=5.18,<7",
+    "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+notebook = ["jupyterlab>=4,<5", "nbformat>=5,<6", "nbclient>=0.9,<1"]
+dev = ["pytest>=7,<10", "ruff>=0.5,<1"]
+
+[project.scripts]
+leo-etl = "leo_data_pipeline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

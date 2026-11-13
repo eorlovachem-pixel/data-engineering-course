@@ -1,0 +1,2 @@
+# Install the editable package from this directory:
+-e .
